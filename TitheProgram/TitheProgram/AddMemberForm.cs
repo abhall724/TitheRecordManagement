@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace TitheProgram
 {
-    public partial class MemberForm : Form
+    public partial class AddMemberForm : Form
     {
-        public MemberForm()
+        public AddMemberForm()
         {
             InitializeComponent();
         }
@@ -32,7 +32,11 @@ namespace TitheProgram
             txtLastName.Clear();
             txtMemberID.Clear();
             txtMiddleInt.Clear();
-            txtSuffix.Clear();
+            txtAddress.Clear();
+            txtCity.Clear();
+            txtState.Clear();
+            txtZip.Clear();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

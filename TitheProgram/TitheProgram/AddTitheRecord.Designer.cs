@@ -1,6 +1,6 @@
 ﻿namespace TitheProgram
 {
-    partial class TitheRecord
+    partial class AddTitheRecord
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.titheDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titheDataSet = new TitheProgram.titheDataSet();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.rdoCheck = new System.Windows.Forms.RadioButton();
             this.rdoCash = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -105,14 +105,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Date:";
             // 
-            // dateTime
+            // dtpDate
             // 
-            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime.Location = new System.Drawing.Point(84, 53);
-            this.dateTime.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(115, 20);
-            this.dateTime.TabIndex = 3;
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(84, 53);
+            this.dtpDate.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(104, 20);
+            this.dtpDate.TabIndex = 3;
             // 
             // rdoCheck
             // 
@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 473);
+            this.ClientSize = new System.Drawing.Size(418, 255);
             this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
@@ -283,7 +283,7 @@
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dateTime);
+            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbMember);
             this.Controls.Add(this.label1);
@@ -310,7 +310,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbMember;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTime;
+        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.RadioButton rdoCheck;
         private System.Windows.Forms.RadioButton rdoCash;
         private System.Windows.Forms.GroupBox groupBox1;

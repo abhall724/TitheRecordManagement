@@ -23,22 +23,15 @@ namespace TitheProgram
 
         private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MemberForm thisMemberForm = new MemberForm();
-            thisMemberForm.ShowDialog();
+            AddMemberForm addMemberForm = new AddMemberForm();
+            addMemberForm.ShowDialog();
         }
 
         private void newRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TitheRecord recordForm = new TitheRecord();
-            recordForm.ShowDialog();
+            AddTitheRecord addRecordForm = new AddTitheRecord();
+            addRecordForm.ShowDialog();
 
-        }
-
-        private void newMember()
-        {
-        }
-        private void newRecord()
-        {
         }
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
