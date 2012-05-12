@@ -9,10 +9,12 @@ namespace TitheProgram
     class TitheRecord
     {
        private string myMemberID;
-       private string myStrCash = null;
-       private string myStrCheck = null;
-       private string myStrCheckNumb = "NA";
-       private decimal myDecAmount = 0.0M;
+       private bool myBoolCash;
+       private bool myBoolCheck;
+       private string myStrCheckNumb;
+       private decimal myDecAmount;
+        //private titheDataSetTableAdapters adapter = new titheDataSetTableAdapters.TitheRecordTableAdapter;
+
 
         public enum titheType
         {
@@ -20,17 +22,17 @@ namespace TitheProgram
             tithes,
             misc
         }
-
-        public TitheRecord(string in_memberID, string in_strCash, string in_strCheck, string in_strCheckNumb, decimal in_decAmount, titheType in_type)
+        //Not using constructors yet...maybe in rewrite!
+       /* public TitheRecord(string in_memberID = null, titheType in_type = titheType.misc, bool in_boolCash = false, bool in_boolCheck = false, string in_strCheckNumb = null, decimal in_decAmount = 0.0M)
         {
             myMemberID = in_memberID;
-            myStrCash = in_strCash;
-            myStrCheck = in_strCheck;
+            myBoolCash = in_boolCash;
+            myBoolCheck = in_boolCheck;
             myStrCheckNumb = in_strCheckNumb;
             myDecAmount = in_decAmount;
 
             titheType myType = in_type;
         }
-
+        */
     }
 }

@@ -13,13 +13,14 @@ namespace TitheProgram
     {
 
         string memberID;
-        string strCash;
-        string strCheck;
+        Boolean boolCash;
+        bool boolCheck;
         string strType;
         string strCheckNumb = "NA";
         decimal decAmount = 0.0M;
 
-        
+        TitheRecord myRecord = new TitheRecord();
+
 
         public AddTitheRecord()
         {
@@ -65,13 +66,13 @@ namespace TitheProgram
 
             if(rdoCash.Checked)
             {
-                strCash = "yes";
-                strCheck = "no";
+                boolCash = true;
+                boolCheck = false;
             }
             else if(rdoCheck.Checked)
             {
-                strCheck = "yes";
-                strCash = "no";
+                boolCheck = true;
+                boolCash = false;
             }
             else
             {
