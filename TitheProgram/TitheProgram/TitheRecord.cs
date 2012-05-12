@@ -34,5 +34,12 @@ namespace TitheProgram
             titheType myType = in_type;
         }
         */
+
+        public string _myMemberID()
+        {
+            
+            return myMemberID;
+
+        }
     }
 }
