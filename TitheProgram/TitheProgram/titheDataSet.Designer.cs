@@ -790,10 +790,10 @@ namespace TitheProgram {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TitheRecordRow AddTitheRecordRow(string TitheRecordID, MembersRow parentMembersRowByMembersTitheRecord, System.DateTime TitheRecordDate, string _Check_YesOrNo_, string CheckNumber, decimal RecordAmt, string _Cash_YesOrNo_, string TitheType) {
+            public TitheRecordRow AddTitheRecordRow(MembersRow parentMembersRowByMembersTitheRecord, System.DateTime TitheRecordDate, bool _Check_YesOrNo_, string CheckNumber, decimal RecordAmt, bool _Cash_YesOrNo_, string TitheType) {
                 TitheRecordRow rowTitheRecordRow = ((TitheRecordRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        TitheRecordID,
+                        null,
                         null,
                         TitheRecordDate,
                         _Check_YesOrNo_,
@@ -811,7 +811,7 @@ namespace TitheProgram {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TitheRecordRow FindByTitheRecordID(string TitheRecordID) {
+            public TitheRecordRow FindByTitheRecordID(int TitheRecordID) {
                 return ((TitheRecordRow)(this.Rows.Find(new object[] {
                             TitheRecordID})));
             }
@@ -846,13 +846,13 @@ namespace TitheProgram {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnTitheRecordID = new global::System.Data.DataColumn("TitheRecordID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTitheRecordID = new global::System.Data.DataColumn("TitheRecordID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitheRecordID);
                 this.columnMemberID = new global::System.Data.DataColumn("MemberID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMemberID);
                 this.columnTitheRecordDate = new global::System.Data.DataColumn("TitheRecordDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitheRecordDate);
-                this._columnCheck_YesOrNo_ = new global::System.Data.DataColumn("Check(YesOrNo)", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnCheck_YesOrNo_ = new global::System.Data.DataColumn("Check(YesOrNo)", typeof(bool), null, global::System.Data.MappingType.Element);
                 this._columnCheck_YesOrNo_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCheck_YesOrNo_");
                 this._columnCheck_YesOrNo_.ExtendedProperties.Add("Generator_UserColumnName", "Check(YesOrNo)");
                 base.Columns.Add(this._columnCheck_YesOrNo_);
@@ -860,7 +860,7 @@ namespace TitheProgram {
                 base.Columns.Add(this.columnCheckNumber);
                 this.columnRecordAmt = new global::System.Data.DataColumn("RecordAmt", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRecordAmt);
-                this._columnCash_YesOrNo_ = new global::System.Data.DataColumn("Cash(YesOrNo)", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnCash_YesOrNo_ = new global::System.Data.DataColumn("Cash(YesOrNo)", typeof(bool), null, global::System.Data.MappingType.Element);
                 this._columnCash_YesOrNo_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCash_YesOrNo_");
                 this._columnCash_YesOrNo_.ExtendedProperties.Add("Generator_UserColumnName", "Cash(YesOrNo)");
                 base.Columns.Add(this._columnCash_YesOrNo_);
@@ -868,13 +868,11 @@ namespace TitheProgram {
                 base.Columns.Add(this.columnTitheType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTitheRecordID}, true));
+                this.columnTitheRecordID.AutoIncrement = true;
                 this.columnTitheRecordID.AllowDBNull = false;
                 this.columnTitheRecordID.Unique = true;
-                this.columnTitheRecordID.MaxLength = 50;
                 this.columnMemberID.MaxLength = 50;
-                this._columnCheck_YesOrNo_.MaxLength = 5;
                 this.columnCheckNumber.MaxLength = 20;
-                this._columnCash_YesOrNo_.MaxLength = 5;
                 this.columnTitheType.MaxLength = 20;
             }
             
@@ -1167,9 +1165,9 @@ namespace TitheProgram {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TitheRecordID {
+            public int TitheRecordID {
                 get {
-                    return ((string)(this[this.tableTitheRecord.TitheRecordIDColumn]));
+                    return ((int)(this[this.tableTitheRecord.TitheRecordIDColumn]));
                 }
                 set {
                     this[this.tableTitheRecord.TitheRecordIDColumn] = value;
@@ -1210,10 +1208,10 @@ namespace TitheProgram {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Check_YesOrNo_ {
+            public bool _Check_YesOrNo_ {
                 get {
                     try {
-                        return ((string)(this[this.tableTitheRecord._Check_YesOrNo_Column]));
+                        return ((bool)(this[this.tableTitheRecord._Check_YesOrNo_Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Check(YesOrNo)\' in table \'TitheRecord\' is DBNull.", e);
@@ -1258,10 +1256,10 @@ namespace TitheProgram {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Cash_YesOrNo_ {
+            public bool _Cash_YesOrNo_ {
                 get {
                     try {
-                        return ((string)(this[this.tableTitheRecord._Cash_YesOrNo_Column]));
+                        return ((bool)(this[this.tableTitheRecord._Cash_YesOrNo_Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Cash(YesOrNo)\' in table \'TitheRecord\' is DBNull.", e);
@@ -2072,18 +2070,17 @@ namespace TitheProgram.titheDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TitheType", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TitheType", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `TitheRecord` (`TitheRecordID`, `MemberID`, `TitheRecordDate`, `Check" +
-                "(YesOrNo)`, `CheckNumber`, `RecordAmt`, `Cash(YesOrNo)`, `TitheType`) VALUES (?," +
-                " ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO TitheRecord\r\n                         (MemberID, TitheRecordDate, [Ch" +
+                "eck(YesOrNo)], CheckNumber, RecordAmt, [Cash(YesOrNo)], TitheType)\r\nVALUES      " +
+                "  (?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TitheRecordID", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TitheRecordID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MemberID", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MemberID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MemberID", global::System.Data.OleDb.OleDbType.WChar, 50, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MemberID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TitheRecordDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TitheRecordDate", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Check(YesOrNo)", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Check(YesOrNo)", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CheckNumber", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CheckNumber", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RecordAmt", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RecordAmt", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Cash(YesOrNo)", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Cash(YesOrNo)", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TitheType", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TitheType", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Check_YesOrNo_", global::System.Data.OleDb.OleDbType.WChar, 5, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Check(YesOrNo)", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CheckNumber", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CheckNumber", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RecordAmt", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "RecordAmt", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Cash_YesOrNo_", global::System.Data.OleDb.OleDbType.WChar, 5, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Cash(YesOrNo)", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TitheType", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TitheType", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE `TitheRecord` SET `TitheRecordID` = ?, `MemberID` = ?, `TitheRecordDate` = ?, `Check(YesOrNo)` = ?, `CheckNumber` = ?, `RecordAmt` = ?, `Cash(YesOrNo)` = ?, `TitheType` = ? WHERE ((`TitheRecordID` = ?) AND ((? = 1 AND `MemberID` IS NULL) OR (`MemberID` = ?)) AND ((? = 1 AND `TitheRecordDate` IS NULL) OR (`TitheRecordDate` = ?)) AND ((? = 1 AND `Check(YesOrNo)` IS NULL) OR (`Check(YesOrNo)` = ?)) AND ((? = 1 AND `CheckNumber` IS NULL) OR (`CheckNumber` = ?)) AND ((? = 1 AND `RecordAmt` IS NULL) OR (`RecordAmt` = ?)) AND ((? = 1 AND `Cash(YesOrNo)` IS NULL) OR (`Cash(YesOrNo)` = ?)) AND ((? = 1 AND `TitheType` IS NULL) OR (`TitheType` = ?)))";
@@ -2271,54 +2268,48 @@ namespace TitheProgram.titheDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TitheRecordID, string MemberID, global::System.Nullable<global::System.DateTime> TitheRecordDate, string _Check_YesOrNo_, string CheckNumber, global::System.Nullable<decimal> RecordAmt, string _Cash_YesOrNo_, string TitheType) {
-            if ((TitheRecordID == null)) {
+        public virtual int Insert(string MemberID, global::System.Nullable<global::System.DateTime> TitheRecordDate, string Check_YesOrNo_, string CheckNumber, global::System.Nullable<decimal> RecordAmt, string Cash_YesOrNo_, string TitheType) {
+            if ((MemberID == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TitheRecordID));
-            }
-            if ((MemberID == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MemberID));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MemberID));
             }
             if ((TitheRecordDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(TitheRecordDate.Value));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(TitheRecordDate.Value));
             }
             else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Check_YesOrNo_ == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((_Check_YesOrNo_ == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Check_YesOrNo_));
+            }
+            if ((CheckNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(_Check_YesOrNo_));
-            }
-            if ((CheckNumber == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CheckNumber));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CheckNumber));
             }
             if ((RecordAmt.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(RecordAmt.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(RecordAmt.Value));
             }
             else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Cash_YesOrNo_ == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((_Cash_YesOrNo_ == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Cash_YesOrNo_));
+            }
+            if ((TitheType == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(_Cash_YesOrNo_));
-            }
-            if ((TitheType == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(TitheType));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(TitheType));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
