@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TitheProgram
 {
@@ -18,6 +19,7 @@ namespace TitheProgram
         string strType;
         string strCheckNumb = "NA";
         decimal decAmount = 0.0M;
+        TextWriter tw = new StreamWriter("test.txt");
 
         TitheRecord myRecord = new TitheRecord();
 
@@ -67,28 +69,61 @@ namespace TitheProgram
             if(rdoCash.Checked)
             {
                 boolCash = true;
+                myRecord.boolCash = true;
                 boolCheck = false;
+                myRecord.boolCheck = false;
             }
             else if(rdoCheck.Checked)
             {
                 boolCheck = true;
+                myRecord.boolCheck = true;
                 boolCash = false;
+                myRecord.boolCash = false;
             }
             else
             {
                 MessageBox.Show("There was a problem with your selection.", "Error!");
-                
+                boolCash = false;
+                boolCheck = false;
             }
             if (rdoMissions.Checked)
             {
-                strType = "Missions";
+                strType = "missions";
+                myRecord.Type = "missions";
             }
-            else if(rdoTithes.Checked)
-                strType = "Tithes";
+            else if (rdoTithes.Checked)
+            {
+                strType = "tithes";
+                myRecord.Type = "tithes";
+            }
             else
-                strType = "Misc.";
+            {
+                strType = "misc.";
+                myRecord.Type = "misc.";
+            }
 
-           }
+            strCheckNumb = txtCheckNumb.Text;
+            myRecord.CheckNumb = txtCheckNumb.Text;
 
+            if (!decimal.TryParse(txtAmount.Text, out decAmount))
+            {
+                MessageBox.Show("Please enter a decimal amount!!", "Error!");
+            }
+
+            myRecord.Amount = decAmount;
+
+            try
+            {
+                myRecord.InsertNewRecord();
+            }
+            catch (Exception ex)
+            {
+                tw.Write(ex);
+                //MessageBox.Show(ex.ToString());
+                tw.Close();
+            }
+          }
+
+       
     }
 }

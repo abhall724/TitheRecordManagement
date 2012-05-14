@@ -53,6 +53,8 @@
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.titheRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titheRecordTableAdapter = new TitheProgram.titheDataSetTableAdapters.TitheRecordTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCheckNumb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titheDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titheDataSet)).BeginInit();
@@ -270,11 +272,29 @@
             // 
             this.titheRecordTableAdapter.ClearBeforeFill = true;
             // 
-            // TitheRecord
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(202, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Check #:";
+            // 
+            // txtCheckNumb
+            // 
+            this.txtCheckNumb.Location = new System.Drawing.Point(259, 50);
+            this.txtCheckNumb.Name = "txtCheckNumb";
+            this.txtCheckNumb.Size = new System.Drawing.Size(100, 20);
+            this.txtCheckNumb.TabIndex = 16;
+            // 
+            // AddTitheRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 255);
+            this.Controls.Add(this.txtCheckNumb);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
@@ -287,7 +307,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbMember);
             this.Controls.Add(this.label1);
-            this.Name = "TitheRecord";
+            this.Name = "AddTitheRecord";
             this.Text = "TitheRecord";
             this.Load += new System.EventHandler(this.TitheRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
@@ -331,5 +351,7 @@
         private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.BindingSource titheRecordBindingSource;
         private titheDataSetTableAdapters.TitheRecordTableAdapter titheRecordTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCheckNumb;
     }
 }

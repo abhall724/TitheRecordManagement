@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace TitheProgram
 {
@@ -13,12 +14,11 @@ namespace TitheProgram
         private bool myBoolCheck;
         private string myCheckNumb;
         private decimal myDecAmount;
-        //private titheDataSetTableAdapters adapter = new titheDataSetTableAdapters.TitheRecordTableAdapter;
-        //NorthwindDataSetTableAdapters.CustomersTableAdapter customersTableAdapter1;
-        //customersTableAdapter1 = new NorthwindDataSetTableAdapters.CustomersTableAdapter();
-        titheDataSetTableAdapters.TitheRecordTableAdapter adapter;
-        //adapter = new titheDataSetTableAdapters.TitheRecordTableAdapter();
+        private string myTitheType;
 
+        titheDataSetTableAdapters.TitheRecordTableAdapter adapter;
+
+        //Not actually using this...
         public enum titheType
         {
             missions,
@@ -99,12 +99,34 @@ namespace TitheProgram
             }
         }
 
-        public bool InsertNewRecord(string con)
+        public string Type
         {
-
-            adapter.Insert();
-
-            return true;
+            get
+            {
+                return myTitheType;
+            }
+            set
+            {
+                myTitheType = value;
+            }
         }
+        public bool InsertNewRecord()
+        {
+            adapter = new titheDataSetTableAdapters.TitheRecordTableAdapter();
+
+            try
+            {
+                adapter.Insert(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error!");
+                return false;
+            }
+                
+        }
+
     }
 }
