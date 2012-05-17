@@ -36,6 +36,7 @@
             this.yearlyByMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yearlyTotalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,8 @@
             // 
             this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yearlyByMemberToolStripMenuItem,
-            this.yearlyTotalToolStripMenuItem});
+            this.yearlyTotalToolStripMenuItem,
+            this.showAllRecordsToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.exitToolStripMenuItem.Text = "&Record";
@@ -101,6 +103,13 @@
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem1.Text = "&Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // showAllRecordsToolStripMenuItem
+            // 
+            this.showAllRecordsToolStripMenuItem.Name = "showAllRecordsToolStripMenuItem";
+            this.showAllRecordsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.showAllRecordsToolStripMenuItem.Text = "&Show all records";
+            this.showAllRecordsToolStripMenuItem.Click += new System.EventHandler(this.showAllRecordsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -131,6 +140,7 @@
         private System.Windows.Forms.ToolStripMenuItem yearlyByMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yearlyTotalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem showAllRecordsToolStripMenuItem;
     }
 }
 

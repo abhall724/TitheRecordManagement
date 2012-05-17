@@ -76,12 +76,13 @@
             // cmbMember
             // 
             this.cmbMember.DataSource = this.membersBindingSource;
-            this.cmbMember.DisplayMember = "MemberID";
+            this.cmbMember.DisplayMember = "FirstName";
             this.cmbMember.FormattingEnabled = true;
             this.cmbMember.Location = new System.Drawing.Point(84, 16);
             this.cmbMember.Name = "cmbMember";
             this.cmbMember.Size = new System.Drawing.Size(115, 21);
             this.cmbMember.TabIndex = 1;
+            this.cmbMember.ValueMember = "MemberID";
             // 
             // membersBindingSource
             // 

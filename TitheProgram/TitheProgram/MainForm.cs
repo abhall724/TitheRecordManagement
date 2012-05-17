@@ -39,6 +39,12 @@ namespace TitheProgram
             this.Close();
         }
 
+        private void showAllRecordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form AllTitheRecords = new AllTitheRecords();
+            AllTitheRecords.Show();
+        }
+
     }
 
 }

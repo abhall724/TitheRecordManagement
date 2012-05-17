@@ -15,6 +15,7 @@ namespace TitheProgram
         private string myCheckNumb;
         private decimal myDecAmount;
         private string myTitheType;
+        private DateTime myTitheDate;
 
         titheDataSetTableAdapters.TitheRecordTableAdapter adapter;
 
@@ -110,14 +111,33 @@ namespace TitheProgram
                 myTitheType = value;
             }
         }
+
+        public DateTime TitheDate
+        {
+            get
+            {
+                return myTitheDate;
+            }
+            set
+            {
+                myTitheDate = value;
+            }
+        }
         public bool InsertNewRecord()
         {
+
+            titheDataSet.TitheRecordDataTable dt = new titheDataSet.TitheRecordDataTable();
+
             adapter = new titheDataSetTableAdapters.TitheRecordTableAdapter();
+           
+            adapter.Fill(dt);
 
             try
             {
                 adapter.Insert(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
-
+                //dt.Rows.Add(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
+                //adapter.Update(dt.Rows.Add(myMemberID, myTitheDate, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType));
+                
                 return true;
             }
             catch (Exception ex)

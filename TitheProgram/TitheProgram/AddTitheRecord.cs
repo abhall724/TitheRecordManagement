@@ -17,9 +17,10 @@ namespace TitheProgram
         Boolean boolCash;
         bool boolCheck;
         string strType;
-        string strCheckNumb = "NA";
+        string strCheckNumb = "000";
         decimal decAmount = 0.0M;
-        TextWriter tw = new StreamWriter("test.txt");
+        //DateTime myDate;
+        //TextWriter tw = new StreamWriter("test.txt");
 
         TitheRecord myRecord = new TitheRecord();
 
@@ -102,15 +103,23 @@ namespace TitheProgram
                 myRecord.Type = "misc.";
             }
 
-            strCheckNumb = txtCheckNumb.Text;
-            myRecord.CheckNumb = txtCheckNumb.Text;
-
+            if (txtCheckNumb.TextLength > 0)
+            {
+                strCheckNumb = txtCheckNumb.Text;
+                myRecord.CheckNumb = txtCheckNumb.Text;
+            }
+            else
+            {
+                strCheckNumb = "000";
+                myRecord.CheckNumb = "000";
+            }
             if (!decimal.TryParse(txtAmount.Text, out decAmount))
             {
                 MessageBox.Show("Please enter a decimal amount!!", "Error!");
             }
 
             myRecord.Amount = decAmount;
+            myRecord.TitheDate = dtpDate.Value;
 
             try
             {
@@ -118,9 +127,9 @@ namespace TitheProgram
             }
             catch (Exception ex)
             {
-                tw.Write(ex);
-                //MessageBox.Show(ex.ToString());
-                tw.Close();
+                //tw.Write(ex);
+                MessageBox.Show(ex.ToString());
+                //.Close();
             }
           }
 
