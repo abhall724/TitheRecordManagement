@@ -47,6 +47,10 @@ namespace TitheProgram
             this.titheRecordTableAdapter.Fill(this.titheDataSet.TitheRecord);
             // TODO: This line of code loads data into the 'titheDataSet.Members' table. You can move, or remove it, as needed.
             this.membersTableAdapter.Fill(this.titheDataSet.Members);
+            this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
+            cmbMember.DataSource = membersBindingSource;
+            cmbMember.ValueMember = "MemberID";
+            cmbMember.DisplayMember = "FullName";
 
         }
 
@@ -65,7 +69,7 @@ namespace TitheProgram
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            memberID = cmbMember.Text; 
+            myRecord.MemberId = cmbMember.SelectedValue.ToString(); 
 
             if(rdoCash.Checked)
             {
@@ -124,6 +128,7 @@ namespace TitheProgram
             try
             {
                 myRecord.InsertNewRecord();
+
             }
             catch (Exception ex)
             {
@@ -131,7 +136,50 @@ namespace TitheProgram
                 MessageBox.Show(ex.ToString());
                 //.Close();
             }
+            finally
+            {
+                this.Close();
+            }
           }
+
+        private void fillByFullNameToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByFullNameToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByFullNameToolStripButton_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
 
        
     }

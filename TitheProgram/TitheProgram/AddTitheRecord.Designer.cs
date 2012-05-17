@@ -49,19 +49,18 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.membersTableAdapter = new TitheProgram.titheDataSetTableAdapters.MembersTableAdapter();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.titheRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titheRecordTableAdapter = new TitheProgram.titheDataSetTableAdapters.TitheRecordTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCheckNumb = new System.Windows.Forms.TextBox();
+            this.membersTitheRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titheDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titheDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.fillByToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titheRecordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersTitheRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,8 +74,6 @@
             // 
             // cmbMember
             // 
-            this.cmbMember.DataSource = this.membersBindingSource;
-            this.cmbMember.DisplayMember = "FirstName";
             this.cmbMember.FormattingEnabled = true;
             this.cmbMember.Location = new System.Drawing.Point(84, 16);
             this.cmbMember.Name = "cmbMember";
@@ -244,26 +241,6 @@
             // 
             this.membersTableAdapter.ClearBeforeFill = true;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(572, 25);
-            this.fillByToolStrip.TabIndex = 14;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            this.fillByToolStrip.Visible = false;
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
             // titheRecordBindingSource
             // 
             this.titheRecordBindingSource.DataMember = "TitheRecord";
@@ -284,10 +261,15 @@
             // 
             // txtCheckNumb
             // 
-            this.txtCheckNumb.Location = new System.Drawing.Point(259, 50);
+            this.txtCheckNumb.Location = new System.Drawing.Point(259, 54);
             this.txtCheckNumb.Name = "txtCheckNumb";
             this.txtCheckNumb.Size = new System.Drawing.Size(100, 20);
             this.txtCheckNumb.TabIndex = 16;
+            // 
+            // membersTitheRecordBindingSource
+            // 
+            this.membersTitheRecordBindingSource.DataMember = "MembersTitheRecord";
+            this.membersTitheRecordBindingSource.DataSource = this.membersBindingSource;
             // 
             // AddTitheRecord
             // 
@@ -296,7 +278,6 @@
             this.ClientSize = new System.Drawing.Size(418, 255);
             this.Controls.Add(this.txtCheckNumb);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
@@ -318,9 +299,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titheRecordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersTitheRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,11 +328,10 @@
         private titheDataSet titheDataSet;
         private System.Windows.Forms.BindingSource membersBindingSource;
         private titheDataSetTableAdapters.MembersTableAdapter membersTableAdapter;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.BindingSource titheRecordBindingSource;
         private titheDataSetTableAdapters.TitheRecordTableAdapter titheRecordTableAdapter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCheckNumb;
+        private System.Windows.Forms.BindingSource membersTitheRecordBindingSource;
     }
 }

@@ -134,10 +134,11 @@ namespace TitheProgram
 
             try
             {
-                adapter.Insert(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
-                //dt.Rows.Add(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
+                //adapter.Insert(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
+                //dt.Rows.Add(myMemberID, myTitheDate, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
                 //adapter.Update(dt.Rows.Add(myMemberID, myTitheDate, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType));
-                
+                adapter.Insert(myMemberID, myTitheDate, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
+                MessageBox.Show("Record created!", "Success!");
                 return true;
             }
             catch (Exception ex)
