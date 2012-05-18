@@ -21,6 +21,7 @@ namespace TitheProgram
         decimal decAmount = 0.0M;
         //DateTime myDate;
         //TextWriter tw = new StreamWriter("test.txt");
+       
 
         TitheRecord myRecord = new TitheRecord();
 
@@ -33,6 +34,7 @@ namespace TitheProgram
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            clearFields();
 
         }
 
@@ -138,7 +140,9 @@ namespace TitheProgram
             }
             finally
             {
-                this.Close();
+                clearFields();
+                cmbMember.Focus();
+
             }
           }
 
@@ -181,6 +185,14 @@ namespace TitheProgram
 
         }
 
-       
+        private void clearFields()
+        {
+            txtAmount.Clear();
+            txtCheckNumb.Clear();
+            cmbMember.SelectedIndex = -1;
+            dtpDate.Value = DateTime.Now;
+        }
+
+
     }
 }

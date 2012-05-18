@@ -35,8 +35,13 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yearlyByMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yearlyTotalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMemOut = new System.Windows.Forms.Label();
+            this.lblDonOut = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +53,7 @@
             this.exitToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(471, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(481, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,13 +102,6 @@
             this.yearlyTotalToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.yearlyTotalToolStripMenuItem.Text = "&Yearly Total";
             // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem1.Text = "&Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
-            // 
             // showAllRecordsToolStripMenuItem
             // 
             this.showAllRecordsToolStripMenuItem.Name = "showAllRecordsToolStripMenuItem";
@@ -111,12 +109,69 @@
             this.showAllRecordsToolStripMenuItem.Text = "&Show all records";
             this.showAllRecordsToolStripMenuItem.Click += new System.EventHandler(this.showAllRecordsToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem1.Text = "&Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Total Members:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(231, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Total Donations this Year:";
+            // 
+            // lblMemOut
+            // 
+            this.lblMemOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMemOut.Location = new System.Drawing.Point(138, 48);
+            this.lblMemOut.Name = "lblMemOut";
+            this.lblMemOut.Size = new System.Drawing.Size(74, 20);
+            this.lblMemOut.TabIndex = 3;
+            this.lblMemOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDonOut
+            // 
+            this.lblDonOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDonOut.Location = new System.Drawing.Point(366, 48);
+            this.lblDonOut.Name = "lblDonOut";
+            this.lblDonOut.Size = new System.Drawing.Size(83, 20);
+            this.lblDonOut.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Lucida Handwriting", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(457, 44);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Southwood Church";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(471, 120);
+            this.ClientSize = new System.Drawing.Size(481, 149);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblDonOut);
+            this.Controls.Add(this.lblMemOut);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -141,6 +196,11 @@
         private System.Windows.Forms.ToolStripMenuItem yearlyTotalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem showAllRecordsToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMemOut;
+        private System.Windows.Forms.Label lblDonOut;
+        private System.Windows.Forms.Label label3;
     }
 }
 

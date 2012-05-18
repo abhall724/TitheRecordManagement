@@ -91,6 +91,15 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="titheConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="TotalMembers" Modifier="Public" Name="TotalMembers" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="TotalMembers">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(MemberID) AS Expr1
+FROM            Members</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TitheRecordTableAdapter" GeneratorDataComponentClassName="TitheRecordTableAdapter" Name="TitheRecord" UserDataComponentName="TitheRecordTableAdapter">
@@ -182,7 +191,18 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
               <Mapping SourceColumn="Cash(YesOrNo)" DataSetColumn="Cash(YesOrNo)" />
               <Mapping SourceColumn="TitheType" DataSetColumn="TitheType" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="titheConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="TotalDonations" Modifier="Public" Name="TotalDonations" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="TotalDonations">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(RecordAmt) AS Expr1
+FROM            TitheRecord
+WHERE        (Year(TitheRecordDate) = Year(Now()))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -278,7 +298,7 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="MembersTitheRecord" msdata:parent="Members" msdata:child="TitheRecord" msdata:parentkey="MemberID" msdata:childkey="MemberID" msprop:Generator_UserChildTable="TitheRecord" msprop:Generator_ChildPropName="GetTitheRecordRows" msprop:Generator_UserParentTable="Members" msprop:Generator_UserRelationName="MembersTitheRecord" msprop:Generator_RelationVarName="relationMembersTitheRecord" msprop:Generator_ParentPropName="MembersRow" />
+      <msdata:Relationship name="MembersTitheRecord" msdata:parent="Members" msdata:child="TitheRecord" msdata:parentkey="MemberID" msdata:childkey="MemberID" msprop:Generator_UserChildTable="TitheRecord" msprop:Generator_ChildPropName="GetTitheRecordRows" msprop:Generator_ParentPropName="MembersRow" msprop:Generator_UserRelationName="MembersTitheRecord" msprop:Generator_RelationVarName="relationMembersTitheRecord" msprop:Generator_UserParentTable="Members" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

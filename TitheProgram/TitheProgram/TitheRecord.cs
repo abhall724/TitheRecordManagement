@@ -149,5 +149,29 @@ namespace TitheProgram
                 
         }
 
+        public string totalDonations()
+        {
+
+            decimal totDonation = 0.0M;
+
+            titheDataSet.TitheRecordDataTable dt = new titheDataSet.TitheRecordDataTable();
+
+            adapter = new titheDataSetTableAdapters.TitheRecordTableAdapter();
+
+            adapter.Fill(dt);
+
+            try
+            {
+                totDonation = (decimal)adapter.TotalDonations();
+                return totDonation.ToString("c");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+            return "0.00";
+            
+        }
     }
 }

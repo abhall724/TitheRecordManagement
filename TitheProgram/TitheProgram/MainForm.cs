@@ -14,11 +14,15 @@ namespace TitheProgram
         public MainForm()
         {
             InitializeComponent();
+           // TitheProgram.Properties.Settings.Default.titheConnectionString = "";
+            //configurationManager
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            TitheRecord genRecord = new TitheRecord();
+            lblDonOut.Text = genRecord.totalDonations();
         }
 
         private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)

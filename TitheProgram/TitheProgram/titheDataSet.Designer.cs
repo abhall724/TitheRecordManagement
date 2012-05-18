@@ -1634,7 +1634,7 @@ namespace TitheProgram.titheDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MemberID, LastName, FirstName, MiddleInitial, Suffix FROM Members";
@@ -1647,6 +1647,10 @@ namespace TitheProgram.titheDataSetTableAdapters {
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT MemberID, FirstName & \" \" & LastName As FullName FROM Members";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        COUNT(MemberID) AS Expr1\r\nFROM            Members";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1934,6 +1938,34 @@ namespace TitheProgram.titheDataSetTableAdapters {
         public virtual int Update(string LastName, string FirstName, string MiddleInitial, string Suffix, string Original_MemberID, string Original_LastName, string Original_FirstName, string Original_MiddleInitial, string Original_Suffix) {
             return this.Update(Original_MemberID, LastName, FirstName, MiddleInitial, Suffix, Original_MemberID, Original_LastName, Original_FirstName, Original_MiddleInitial, Original_Suffix);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> TotalMembers() {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
     }
     
     /// <summary>
@@ -2137,12 +2169,17 @@ namespace TitheProgram.titheDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TitheRecordID, MemberID, TitheRecordDate, [Check(YesOrNo)], CheckNumber, R" +
                 "ecordAmt, [Cash(YesOrNo)], TitheType FROM TitheRecord";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        SUM(RecordAmt) AS Expr1\r\nFROM            TitheRecord\r\nWHERE        " +
+                "(Year(TitheRecordDate) = Year(Now()))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2487,6 +2524,34 @@ namespace TitheProgram.titheDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string MemberID, global::System.Nullable<global::System.DateTime> TitheRecordDate, string _Check_YesOrNo_, string CheckNumber, global::System.Nullable<decimal> RecordAmt, string _Cash_YesOrNo_, string TitheType, string Original_TitheRecordID, string Original_MemberID, global::System.Nullable<global::System.DateTime> Original_TitheRecordDate, string _Original_Check_YesOrNo_, string Original_CheckNumber, global::System.Nullable<decimal> Original_RecordAmt, string _Original_Cash_YesOrNo_, string Original_TitheType) {
             return this.Update(Original_TitheRecordID, MemberID, TitheRecordDate, _Check_YesOrNo_, CheckNumber, RecordAmt, _Cash_YesOrNo_, TitheType, Original_TitheRecordID, Original_MemberID, Original_TitheRecordDate, _Original_Check_YesOrNo_, Original_CheckNumber, Original_RecordAmt, _Original_Cash_YesOrNo_, Original_TitheType);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object TotalDonations() {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     
