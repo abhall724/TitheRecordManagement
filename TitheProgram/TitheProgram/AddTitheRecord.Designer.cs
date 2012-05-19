@@ -79,7 +79,6 @@
             this.cmbMember.Name = "cmbMember";
             this.cmbMember.Size = new System.Drawing.Size(115, 21);
             this.cmbMember.TabIndex = 1;
-            this.cmbMember.ValueMember = "MemberID";
             // 
             // membersBindingSource
             // 

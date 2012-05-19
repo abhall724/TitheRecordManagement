@@ -26,8 +26,7 @@ namespace TitheProgram.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\Spyder\\Documents\\Tithe Pr" +
-            "ogram\\tithe.accdb\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\TitheProgram\\tithe.accdb")]
         public string titheConnectionString {
             get {
                 return ((string)(this["titheConnectionString"]));

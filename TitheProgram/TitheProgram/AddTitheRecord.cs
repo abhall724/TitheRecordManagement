@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace TitheProgram
 {
     public partial class AddTitheRecord : Form
@@ -19,9 +20,6 @@ namespace TitheProgram
         string strType;
         string strCheckNumb = "000";
         decimal decAmount = 0.0M;
-        //DateTime myDate;
-        //TextWriter tw = new StreamWriter("test.txt");
-       
 
         TitheRecord myRecord = new TitheRecord();
 
@@ -46,11 +44,11 @@ namespace TitheProgram
         private void TitheRecord_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'titheDataSet.TitheRecord' table. You can move, or remove it, as needed.
-            this.titheRecordTableAdapter.Fill(this.titheDataSet.TitheRecord);
+            //this.titheRecordTableAdapter.Fill(this.titheDataSet.TitheRecord);
             // TODO: This line of code loads data into the 'titheDataSet.Members' table. You can move, or remove it, as needed.
             this.membersTableAdapter.Fill(this.titheDataSet.Members);
             this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
-            cmbMember.DataSource = membersBindingSource;
+            cmbMember.DataSource = 
             cmbMember.ValueMember = "MemberID";
             cmbMember.DisplayMember = "FullName";
 
@@ -146,44 +144,6 @@ namespace TitheProgram
             }
           }
 
-        private void fillByFullNameToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByFullNameToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByFullNameToolStripButton_Click_2(object sender, EventArgs e)
-        {
-            try
-            {
-                this.membersTableAdapter.FillByFullName(this.titheDataSet.Members);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         private void clearFields()
         {
