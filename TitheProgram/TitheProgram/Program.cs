@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using TitheProgram.Controllers;
 
 namespace TitheProgram
 {
@@ -15,8 +16,8 @@ namespace TitheProgram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-            
+            Application.Run(new MainForm(new MainFormController(new lib.FileHandler(), new lib.BLL())));
+            //"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Jet OLEDB:Engine Type=5"
         }
     }
 }
