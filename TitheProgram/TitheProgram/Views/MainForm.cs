@@ -7,22 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TitheProgram.Controllers;
+using TitheProgram.Interfaces;
 
 namespace TitheProgram
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IView
     {
         private MainFormController controller;
 
-        public MainForm(MainFormController controller)
+        public MainForm()
         {
             this.InitializeComponent();
-            this.controller = controller;
+            this.controller = Program.controllerFactory.getMainFormController();
+            this.InitializeController();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        public void SetTotalMembers(string total)
         {
-            this.controller.Setup();
+            this.lblMemOut.Text = total;
+        }
+
+        public void SetTotalDonations(string total)
+        {
+            this.lblDonOut.Text = total;
+        }
+
+        private void InitializeController()
+        {
+            this.controller.SetView(this);
         }
 
         private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,12 +48,6 @@ namespace TitheProgram
             AddTitheRecord addRecordForm = new AddTitheRecord();
             addRecordForm.ShowDialog();
 
-        }
-
-        private void showAllRecordsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form AllTitheRecords = new AllTitheRecords();
-            AllTitheRecords.ShowDialog();
         }
 
         private void exitToolStripMenuItem2_Click(object sender, EventArgs e)

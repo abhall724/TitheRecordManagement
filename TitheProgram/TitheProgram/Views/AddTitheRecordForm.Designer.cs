@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMember = new System.Windows.Forms.ComboBox();
-            this.membersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.titheDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.titheDataSet = new TitheProgram.titheDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.rdoCheck = new System.Windows.Forms.RadioButton();
@@ -48,19 +44,10 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.membersTableAdapter = new TitheProgram.titheDataSetTableAdapters.MembersTableAdapter();
-            this.titheRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.titheRecordTableAdapter = new TitheProgram.titheDataSetTableAdapters.TitheRecordTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCheckNumb = new System.Windows.Forms.TextBox();
-            this.membersTitheRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.titheDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.titheDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.titheRecordBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membersTitheRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,21 +66,6 @@
             this.cmbMember.Name = "cmbMember";
             this.cmbMember.Size = new System.Drawing.Size(115, 21);
             this.cmbMember.TabIndex = 1;
-            // 
-            // membersBindingSource
-            // 
-            this.membersBindingSource.DataMember = "Members";
-            this.membersBindingSource.DataSource = this.titheDataSetBindingSource;
-            // 
-            // titheDataSetBindingSource
-            // 
-            this.titheDataSetBindingSource.DataSource = this.titheDataSet;
-            this.titheDataSetBindingSource.Position = 0;
-            // 
-            // titheDataSet
-            // 
-            this.titheDataSet.DataSetName = "titheDataSet";
-            this.titheDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -236,19 +208,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // membersTableAdapter
-            // 
-            this.membersTableAdapter.ClearBeforeFill = true;
-            // 
-            // titheRecordBindingSource
-            // 
-            this.titheRecordBindingSource.DataMember = "TitheRecord";
-            this.titheRecordBindingSource.DataSource = this.titheDataSet;
-            // 
-            // titheRecordTableAdapter
-            // 
-            this.titheRecordTableAdapter.ClearBeforeFill = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -264,11 +223,6 @@
             this.txtCheckNumb.Name = "txtCheckNumb";
             this.txtCheckNumb.Size = new System.Drawing.Size(100, 20);
             this.txtCheckNumb.TabIndex = 16;
-            // 
-            // membersTitheRecordBindingSource
-            // 
-            this.membersTitheRecordBindingSource.DataMember = "MembersTitheRecord";
-            this.membersTitheRecordBindingSource.DataSource = this.membersBindingSource;
             // 
             // AddTitheRecord
             // 
@@ -290,16 +244,10 @@
             this.Controls.Add(this.label1);
             this.Name = "AddTitheRecord";
             this.Text = "TitheRecord";
-            this.Load += new System.EventHandler(this.TitheRecord_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.titheDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.titheDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.titheRecordBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membersTitheRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,14 +271,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.BindingSource titheDataSetBindingSource;
-        private titheDataSet titheDataSet;
-        private System.Windows.Forms.BindingSource membersBindingSource;
-        private titheDataSetTableAdapters.MembersTableAdapter membersTableAdapter;
-        private System.Windows.Forms.BindingSource titheRecordBindingSource;
-        private titheDataSetTableAdapters.TitheRecordTableAdapter titheRecordTableAdapter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCheckNumb;
-        private System.Windows.Forms.BindingSource membersTitheRecordBindingSource;
     }
 }

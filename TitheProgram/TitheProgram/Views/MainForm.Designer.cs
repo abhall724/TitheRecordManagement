@@ -119,7 +119,7 @@
             this.showAllRecordsToolStripMenuItem.Name = "showAllRecordsToolStripMenuItem";
             this.showAllRecordsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.showAllRecordsToolStripMenuItem.Text = "&Show all records";
-            this.showAllRecordsToolStripMenuItem.Click += new System.EventHandler(this.showAllRecordsToolStripMenuItem_Click);
+            
             // 
             // mnuDatabase
             // 
@@ -204,7 +204,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

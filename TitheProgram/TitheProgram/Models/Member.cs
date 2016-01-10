@@ -4,125 +4,64 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TitheProgram
+namespace TitheProgram.Models
 {
 
-    class Member
+    public class Member
     {
-        private string myMemberID;
-        private string myLastName;
-        private string myFirstName;
-        private string myMidInit;
-        private string mySuffix;
-        private string myAddress;
-        private string myCity;
-        private string myZip;
-        private string myState;
-
-        public string MemberID
+        
+        public int id
         {
-            get { return myMemberID; }
-            set { myMemberID = value; }
+            get;
+            set;
         }
 
-        public string LastName
+        public string lastname
         {
-            get { return myLastName; }
-            set { myLastName = value; }
+            get;
+            set;
         }
 
-        public string FirstName
+        public string firstname
         {
-            get { return myFirstName; }
-            set { myFirstName = value; }
+            get;
+            set;
         }
 
-        public string MidInit
+        public string middleInitial
         {
-            get { return myMidInit; }
-            set { myMidInit = value; }
+            get;
+            set;
         }
 
-        public string Suffix
+        public string suffix
         {
-            get { return mySuffix; }
-            set { mySuffix = value; }
+            get;
+            set;
         }
 
-        public string Address
+        public string address
         {
-            get { return myAddress; }
-            set { myAddress = value; }
+            get;
+            set;
         }
 
-        public string City
+        public string city
         {
-            get { return myCity; }
-            set { myCity = value; }
+            get;
+            set;
         }
 
-        public string Zip
+        public string state
         {
-            get { return myZip; }
-            set { myZip = value; }
+            get;
+            set;
         }
 
-        public string State
+        public string zip
         {
-            get { return myState; }
-            set { myState = value; }
+            get;
+            set;
         }
-
-        //public bool InsertNewMember()
-        //{
-
-        //    titheDataSet.MembersDataTable dt = new titheDataSet.MembersDataTable();
-
-        //    adapter = new titheDataSetTableAdapters.MembersTableAdapter();
-            
-        //    adapter.Fill(dt);
-
-        //    try
-        //    {
-        //        //adapter.Insert(myMemberID, DateTime.Now, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
-        //        //dt.Rows.Add(myMemberID, myTitheDate, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType);
-        //        //adapter.Update(dt.Rows.Add(myMemberID, myTitheDate, myBoolCheck, myCheckNumb, myDecAmount, myBoolCash, myTitheType));
-        //        adapter.Insert(myMemberID, myLastName, myFirstName, myMidInit, mySuffix, myAddress, myCity, myState, myZip);
-        //        MessageBox.Show("Record created!", "Success!");
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.ToString(), "Error!");
-        //        return false;
-        //    }
-
-        //}
-
-        //public string totalMembers()
-        //{
-
-        //    int totMembers = 0;
-
-        //    titheDataSet.MembersDataTable dt = new titheDataSet.MembersDataTable();
-
-
-        //    adapter = new titheDataSetTableAdapters.MembersTableAdapter();
-
-        //    adapter.Fill(dt);
-
-        //    try
-        //    {
-        //        totMembers = (int)adapter.TotalMembers();
-        //        return totMembers.ToString();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-
-        //    return "0.00";
-
-        //}
     }
 }

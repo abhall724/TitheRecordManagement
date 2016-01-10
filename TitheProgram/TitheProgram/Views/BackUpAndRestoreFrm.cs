@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using TitheProgram.lib;
 
 namespace TitheProgram
 {
     public partial class BackUpAndRestoreFrm : Form
     {
-        titheFile tf = new titheFile();
-
         public BackUpAndRestoreFrm()
         {
             InitializeComponent();
@@ -21,8 +20,9 @@ namespace TitheProgram
 
         private void BackUpAndRestoreFrm_Load(object sender, EventArgs e)
         {
+            FileHandler file = new FileHandler();
 
-            if (tf.fileExist())
+            if (file.HasDatabaseFile())
             {
                 grpBackup.Enabled = true;
             }
