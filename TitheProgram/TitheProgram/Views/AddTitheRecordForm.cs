@@ -43,12 +43,23 @@ namespace TitheProgram
             txtCheckNumb.Clear();
             cmbMember.SelectedIndex = -1;
             dtpDate.Value = DateTime.Now;
+            this.cmbPaymentType.SelectedIndex = 0;
         }
 
         public void ShowMessage(string message)
         {
             MessageBox.Show(message, "Add Tithe Record", MessageBoxButtons.OK);
             this.Close();
+        }
+
+        public void SetMembers(List<Member> members)
+        {
+            this.cmbMember.Items.AddRange(members.ToArray());
+        }
+
+        public void SetPaymentTypes(List<PaymentType> types)
+        {
+            this.cmbPaymentType.Items.AddRange(types.ToArray());
         }
     }
 }

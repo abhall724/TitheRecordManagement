@@ -36,8 +36,13 @@ namespace TitheProgram.Models
 
         public string suffix
         {
-            get;
-            set;
+            get
+            {
+                return "";
+            }
+            set
+            {
+            }
         }
 
         public string address
@@ -62,6 +67,11 @@ namespace TitheProgram.Models
         {
             get;
             set;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Member {0} - {1} {2}", this.id, this.firstname, this.lastname);
         }
     }
 }

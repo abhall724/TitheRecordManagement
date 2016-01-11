@@ -41,6 +41,7 @@ namespace TitheProgram
         {
             AddMemberForm addMemberForm = new AddMemberForm();
             addMemberForm.ShowDialog();
+            this.controller.SetMemberCount();
         }
 
         private void newRecordToolStripMenuItem_Click(object sender, EventArgs e)

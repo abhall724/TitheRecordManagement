@@ -21,7 +21,7 @@ namespace TitheProgram.Controllers
             this.SetMemberCount();
         }
 
-        private void SetMemberCount()
+        public void SetMemberCount()
         {
             this.view.SetTotalMembers(this.bll.GetTotalMemberCount());
             this.view.SetTotalDonations(this.bll.GetTotalYearlyDonations());

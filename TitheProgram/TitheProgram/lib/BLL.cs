@@ -96,5 +96,17 @@
                 return new List<Member>();
             }
         }
+
+        public List<PaymentType> GetAllPaymentTypes()
+        {
+            try
+            {
+                return this.dll.ReadAllPaymentTypes();
+            }
+            catch (Exception ex)
+            {
+                return new List<PaymentType>();
+            }
+        }
     }
 }

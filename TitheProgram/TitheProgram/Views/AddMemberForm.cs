@@ -41,7 +41,6 @@ namespace TitheProgram
         {
             this.txtFirstName.Clear();
             this.txtLastName.Clear();
-            this.txtMemberID.Clear();
             this.txtMiddleInt.Clear();
             this.txtAddress.Clear();
             this.txtCity.Clear();

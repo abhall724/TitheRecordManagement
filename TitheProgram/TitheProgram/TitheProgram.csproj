@@ -61,6 +61,7 @@
     <Compile Include="lib\ControllerFactory.cs" />
     <Compile Include="lib\DataBaseLogicLayer.cs" />
     <Compile Include="lib\FileHandler.cs" />
+    <Compile Include="Models\PaymentType.cs" />
     <Compile Include="Views\BackUpAndRestoreFrm.cs">
       <SubType>Form</SubType>
     </Compile>
