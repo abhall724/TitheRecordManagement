@@ -32,7 +32,7 @@
             this.cmbMember = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpType = new System.Windows.Forms.GroupBox();
             this.rdoMisc = new System.Windows.Forms.RadioButton();
             this.rdoTithes = new System.Windows.Forms.RadioButton();
             this.rdoMissions = new System.Windows.Forms.RadioButton();
@@ -45,7 +45,7 @@
             this.txtCheckNumb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbPaymentType = new System.Windows.Forms.ComboBox();
-            this.groupBox2.SuspendLayout();
+            this.grpType.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -83,33 +83,33 @@
             this.dtpDate.Size = new System.Drawing.Size(180, 20);
             this.dtpDate.TabIndex = 3;
             // 
-            // groupBox2
+            // grpType
             // 
-            this.groupBox2.Controls.Add(this.rdoMisc);
-            this.groupBox2.Controls.Add(this.rdoTithes);
-            this.groupBox2.Controls.Add(this.rdoMissions);
-            this.groupBox2.Location = new System.Drawing.Point(343, 95);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(176, 90);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Type";
+            this.grpType.Controls.Add(this.rdoMisc);
+            this.grpType.Controls.Add(this.rdoTithes);
+            this.grpType.Controls.Add(this.rdoMissions);
+            this.grpType.Location = new System.Drawing.Point(343, 95);
+            this.grpType.Name = "grpType";
+            this.grpType.Size = new System.Drawing.Size(176, 90);
+            this.grpType.TabIndex = 8;
+            this.grpType.TabStop = false;
+            this.grpType.Text = "Type";
             // 
             // rdoMisc
             // 
             this.rdoMisc.AutoSize = true;
-            this.rdoMisc.Location = new System.Drawing.Point(6, 59);
+            this.rdoMisc.Location = new System.Drawing.Point(6, 65);
             this.rdoMisc.Name = "rdoMisc";
             this.rdoMisc.Size = new System.Drawing.Size(50, 17);
             this.rdoMisc.TabIndex = 2;
-            this.rdoMisc.TabStop = true;
             this.rdoMisc.Text = "Misc.";
             this.rdoMisc.UseVisualStyleBackColor = true;
             // 
             // rdoTithes
             // 
             this.rdoTithes.AutoSize = true;
-            this.rdoTithes.Location = new System.Drawing.Point(6, 36);
+            this.rdoTithes.Checked = true;
+            this.rdoTithes.Location = new System.Drawing.Point(6, 42);
             this.rdoTithes.Name = "rdoTithes";
             this.rdoTithes.Size = new System.Drawing.Size(54, 17);
             this.rdoTithes.TabIndex = 1;
@@ -124,7 +124,6 @@
             this.rdoMissions.Name = "rdoMissions";
             this.rdoMissions.Size = new System.Drawing.Size(65, 17);
             this.rdoMissions.TabIndex = 0;
-            this.rdoMissions.TabStop = true;
             this.rdoMissions.Text = "Missions";
             this.rdoMissions.UseVisualStyleBackColor = true;
             // 
@@ -221,15 +220,15 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpType);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbMember);
             this.Controls.Add(this.label1);
             this.Name = "AddTitheRecord";
             this.Text = "TitheRecord";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpType.ResumeLayout(false);
+            this.grpType.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +240,7 @@
         private System.Windows.Forms.ComboBox cmbMember;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpType;
         private System.Windows.Forms.RadioButton rdoMisc;
         private System.Windows.Forms.RadioButton rdoTithes;
         private System.Windows.Forms.RadioButton rdoMissions;

@@ -21,11 +21,13 @@
         public void SetView(AddTitheRecord view)
         {
             this.view = view;
+            this.SetupView();
         }
 
-        public List<Member> GetMembers()
+        public void SetupView()
         {
-            return this.bll.GetAllMembers();
+            this.view.SetMembers(this.bll.GetAllMembers());
+            this.view.SetPaymentTypes(this.bll.GetAllPaymentTypes());
         }
 
         public void AddTitheRecord(TitheRecord tithe)

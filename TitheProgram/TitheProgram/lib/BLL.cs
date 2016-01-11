@@ -6,9 +6,6 @@
     using System.Text;
     using TitheProgram.Models;
     
-    /// <summary>
-    /// TODO: Update summary.
-    /// </summary>
     public class BLL
     {
         private FileHandler fileHandler;
@@ -45,6 +42,7 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return "0";
             }
         }
@@ -57,6 +55,7 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return "0";
             }
         }
@@ -69,6 +68,7 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -81,6 +81,7 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -93,6 +94,7 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return new List<Member>();
             }
         }
@@ -105,6 +107,7 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return new List<PaymentType>();
             }
         }

@@ -29,7 +29,7 @@ namespace TitheProgram
 
         public void SetTotalDonations(string total)
         {
-            this.lblDonOut.Text = total;
+            this.lblDonOut.Text = string.Format("{0:C}", decimal.Parse(total));
         }
 
         private void InitializeController()
@@ -48,7 +48,7 @@ namespace TitheProgram
         {
             AddTitheRecord addRecordForm = new AddTitheRecord();
             addRecordForm.ShowDialog();
-
+            this.controller.SetMemberCount();
         }
 
         private void exitToolStripMenuItem2_Click(object sender, EventArgs e)

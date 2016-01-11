@@ -68,6 +68,7 @@ recordType VARCHAR);";
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                     con.Close();
                     return false;
                 }
@@ -95,10 +96,10 @@ recordType VARCHAR);";
             {
                 con.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand("SELECT count(*) FROM TitheRecords WHERE YEAR(recordDate) = YEAR(Now())", con))
+                using (OleDbCommand cmd = new OleDbCommand("SELECT SUM(amount) FROM TitheRecords WHERE YEAR(recordDate) = YEAR(Now())", con))
                 {
-                    int count = System.Convert.ToInt32(cmd.ExecuteScalar());
-                    return count.ToString();
+                    var sum = System.Convert.ToDecimal(cmd.ExecuteScalar());
+                    return sum.ToString();
                 }
             }
         }
@@ -157,7 +158,7 @@ recordType VARCHAR);";
             {
                 con.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand("INSERT INTO TitheRecord (memberId, recordDate, paymentType, checkNumber, amount, recordType) VALUES " +
+                using (OleDbCommand cmd = new OleDbCommand("INSERT INTO TitheRecords (memberId, recordDate, paymentType, checkNumber, amount, recordType) VALUES " +
                     "(@memberId, @recordDate, @paymentType, @checkNumber, @amount, @recordType)", con))
                 {
                     OleDbParameter memberId = new OleDbParameter("@memberId", OleDbType.Integer);

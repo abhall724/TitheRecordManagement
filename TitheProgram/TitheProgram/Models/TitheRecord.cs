@@ -15,7 +15,7 @@ namespace TitheProgram.Models
             set;
         }
 
-        public string memberId
+        public int memberId
         {
             get;
             set;
